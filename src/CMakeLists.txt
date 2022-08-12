@@ -41,6 +41,11 @@ target_compile_options (hoard
 		-Wconversion -Wuninitialized -D_REENTRANT=1
 )
 
+target_link_options (hoard
+	PRIVATE
+		-flto
+)
+
 target_compile_features (hoard PUBLIC cxx_std_14)
 
 target_include_directories (hoard

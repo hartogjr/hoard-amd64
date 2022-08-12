@@ -38,6 +38,8 @@ if(POLICY CMP0056)
 	cmake_policy(SET CMP0056 NEW)
 endif()
 
+set (CMAKE_CXX_COMPILER "clang++")
+
 project (hoard CXX)
 
 # Most of this stuff is taken from the Hoard GNUmakefile
