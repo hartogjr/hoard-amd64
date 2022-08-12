@@ -38,16 +38,17 @@ add_library (hoard SHARED
 target_compile_options (hoard
 	PRIVATE
 		-flto -Wall -Wextra -ffast-math -fno-builtin-malloc -Wshadow
-		-Wconversion -Wuninitialized -D_REENTRANT=1 -Bsymbolic
+		-Wconversion -Wuninitialized -D_REENTRANT=1
 )
 
 target_compile_features (hoard PUBLIC cxx_std_14)
 
 target_include_directories (hoard
-	${CMAKE_SOURCE_DIR}/inc
-	${CMAKE_SOURCE_DIR}/inc/util
-	${CMAKE_SOURCE_DIR}/inc/hoard
-	${CMAKE_SOURCE_DIR}/inc/superblocks
+	PRIVATE
+		${CMAKE_SOURCE_DIR}/inc
+		${CMAKE_SOURCE_DIR}/inc/util
+		${CMAKE_SOURCE_DIR}/inc/hoard
+		${CMAKE_SOURCE_DIR}/inc/superblocks
 )
 
 target_link_libraries (hoard

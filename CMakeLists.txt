@@ -38,12 +38,9 @@ if(POLICY CMP0056)
 	cmake_policy(SET CMP0056 NEW)
 endif()
 
-# Most of this stuff is taken from the Hoard GNUmakefile
-set (CMAKE_CXX_COMPILER "clang++")
-
 project (hoard CXX)
 
-
+# Most of this stuff is taken from the Hoard GNUmakefile
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 	add_compile_options(-O0 -g3 -ggdb)
 else ()
