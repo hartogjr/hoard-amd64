@@ -50,10 +50,10 @@ target_compile_features (hoard PUBLIC cxx_std_14)
 
 target_include_directories (hoard
 	PRIVATE
-		${CMAKE_SOURCE_DIR}/inc
-		${CMAKE_SOURCE_DIR}/inc/util
-		${CMAKE_SOURCE_DIR}/inc/hoard
-		${CMAKE_SOURCE_DIR}/inc/superblocks
+	${CMAKE_CURRENT_SOURCE_DIR}/../inc
+	${CMAKE_CURRENT_SOURCE_DIR}/../inc/util
+	${CMAKE_CURRENT_SOURCE_DIR}/../inc/hoard
+	${CMAKE_CURRENT_SOURCE_DIR}/../inc/superblocks
 )
 
 target_link_libraries (hoard
