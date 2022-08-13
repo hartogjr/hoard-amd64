@@ -30,7 +30,7 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-cmake_minimum_required (VERSION 3.19)
+cmake_minimum_required (VERSION 3.15)
 if(POLICY CMP0015)
 	cmake_policy(SET CMP0015 NEW)
 endif()
@@ -38,14 +38,10 @@ if(POLICY CMP0056)
 	cmake_policy(SET CMP0056 NEW)
 endif()
 
-execute_process (
-	COMMAND which clang++
-	OUTPUT_VARIABLE CLANGPATH
-	OUTPUT_STRIP_TRAILING_WHITESPACE
-	COMMAND_ERROR_IS_FATAL ANY
-)
-
-set (CMAKE_CXX_COMPILER "${CLANGPATH}")
+# It is advised to use the CLang compiler. This is however not possible to set in this
+# project in a hardcoded way, because it would break software that uses this CMake config
+# and are not aware of it. CLang gives to warnings, GCC does (but still builds and works
+# fine for as far as I can tell)
 
 project (hoard CXX)
 
