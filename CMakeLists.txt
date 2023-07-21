@@ -1,8 +1,6 @@
-# vim:set ts=4 sw=4 noet tw=90:
-#
 # BSD 3-Clause License
 #
-# Copyright (c) 2022, Bren de Hartog <bren@dehartog.name>
+# Copyright (c) 2022-2023, Bren de Hartog <bren@dehartog.name>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -40,18 +38,9 @@ endif()
 
 # It is advised to use the CLang compiler. This is however not possible to set in this
 # project in a hardcoded way, because it would break software that uses this CMake config
-# and are not aware of it. CLang gives to warnings, GCC does (but still builds and works
-# fine for as far as I can tell)
+# and is not aware of it. Special compiler options have been set to ignore known warnings.
 
 project (hoard CXX)
-
-# Most of this stuff is taken from the Hoard GNUmakefile
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-	add_compile_options(-O0 -g3 -ggdb)
-else ()
-	add_compile_options(-O3 -DNDEBUG)
-	add_link_options(-s)
-endif ()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

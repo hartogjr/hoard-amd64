@@ -1,8 +1,6 @@
-# vim:set ts=4 sw=4 noet tw=90:
-#
 # BSD 3-Clause License
 #
-# Copyright (c) 2022, Bren de Hartog <bren@dehartog.name>
+# Copyright (c) 2022-2023, Bren de Hartog <bren@dehartog.name>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -37,8 +35,9 @@ add_library (hoard SHARED
 
 target_compile_options (hoard
 	PRIVATE
-		-flto -Wall -Wextra -ffast-math -fno-builtin-malloc -Wshadow
-		-Wconversion -Wuninitialized -D_REENTRANT=1
+		-flto -Wall -Wextra -ffast-math -fno-builtin-malloc -Wno-shadow
+		-Wno-conversion -Wno-uninitialized -D_REENTRANT=1 -Wno-sign-compare
+		-Wno-unused-variable
 )
 
 target_link_options (hoard
